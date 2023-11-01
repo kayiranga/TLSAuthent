@@ -7,34 +7,33 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import com.kayiranga.restws.model.Driver;
-import com.kayiranga.restws.repos.DriverRepository;
-import com.kayiranga.restws.service.DriverService;
-//serviceImpl
-public class DriverServiceImpl implements DriverService {
+import com.kayiranga.restws.model.User;
+import com.kayiranga.restws.repos.UserRepository;
+import com.kayiranga.restws.service.UserService;
 
+public class UserServiceImpl implements UserService {
 	@Autowired
-	DriverRepository repository;
+	UserRepository repository;
 	@Override
-	public List<Driver> getDrivers() {
+	public List<User> getUsers() {
 		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
 
 	@Override
-	public Driver getDriver(int id) {
+	public User getUser(int id) {
 		// TODO Auto-generated method stub
 		return  repository.findById(id).get();
 	}
 
 	@Override
-	public Response createDriver(Driver driver) {
+	public Response createUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Response updateDriver(Driver driver) {
+	public Response updateUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}

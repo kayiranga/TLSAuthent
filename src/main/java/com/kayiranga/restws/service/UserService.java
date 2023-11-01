@@ -11,28 +11,28 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-
-import com.kayiranga.restws.model.Driver;
+import com.kayiranga.restws.model.User;
 
 @Consumes("application/json")
 @Produces("application/json")
-@Path("/driverservice")
-public interface DriverService {
-	
-	@Path("/drivers")
-	@GET
-	List<Driver> getDrivers();
+@Path("/userservice")
+public interface UserService {
 
-	@Path("/drivers/{id}")
+	@Path("/users")
 	@GET
-	Driver getDriver(@PathParam("id") int id);
+	List<User> getUsers();
 
-	@Path("/drivers")
+	@Path("/users/{id}")
+	@GET
+	User getUser(@PathParam("id") int id);
+
+	@Path("/users")
 	@POST
-	Response createDriver(Driver driver);
+	Response createUser(User user);
 
-	@Path("/drivers")
+	@Path("/Users")
 	@PUT
-	Response updateDriver(Driver driver);
+	Response updateUser(User user);
+
 
 }
