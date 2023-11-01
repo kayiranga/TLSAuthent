@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.kayiranga.restws.model.Driver;
 import com.kayiranga.restws.repos.DriverRepository;
 import com.kayiranga.restws.service.DriverService;
-
+//serviceImpl
 public class DriverServiceImpl implements DriverService {
 
 	@Autowired
