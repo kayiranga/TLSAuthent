@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 import com.kayiranga.restws.model.User;
+
 import com.kayiranga.restws.repos.UserRepository;
 import com.kayiranga.restws.service.UserService;
 
