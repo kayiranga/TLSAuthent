@@ -4,19 +4,52 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.kayiranga.restws.model.User;
 import com.kayiranga.restws.repos.UserRepository;
 
 @Controller
+@RestController
+@RequestMapping("/authentication")
 public class UserController {
 	
 	@Autowired
+	UserRepository repository;
+	
+	@GetMapping("/all")
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
+	}
+
+	@GetMapping("/users/{id}")
+	public User getUser(int id) {
+		// TODO Auto-generated method stub
+		return  repository.findById(id).get();
+	}
+
+	 @PostMapping("/create")
+	public User createUser(@RequestBody User user) {
+		
+		return repository.save(user);
+	}
+
+	@PutMapping("/update")
+	public User updateUser(@RequestBody User user) {
+		// TODO Auto-generated method stub
+		return repository.save(user);
+	}
+
+	
+	
+	/*@Autowired
     private UserRepository userRepo;
      
     @GetMapping("")
@@ -64,7 +97,7 @@ public class UserController {
         userRepo.save(user);
          
         return "register_success";
-    }
+    }*/
     
 
 }

@@ -28,11 +28,11 @@ public interface UserService {
 
 	@Path("/users")
 	@POST
-	Response createUser(User user);
+	User createUser(User user);
 
 	@Path("/Users")
 	@PUT
-	Response updateUser(User user);
+	User updateUser(User user);
 
 
 }

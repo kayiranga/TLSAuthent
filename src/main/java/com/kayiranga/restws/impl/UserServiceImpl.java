@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.kayiranga.restws.model.User;
 
@@ -28,13 +28,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Response createUser(User user) {
+	public User createUser(@RequestBody User user) {
 		// TODO Auto-generated method stub
-		return null;
+		return repository.save(user);
 	}
 
 	@Override
-	public Response updateUser(User user) {
+	public User updateUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
